@@ -132,8 +132,8 @@ function viscousForce(i, j) {
     let dot = vec3.dot(
         getNormal(i, j),
         vec3.subtract(
-            getVelocity(i, j),
-            uf
+            vec3.create(uf),
+            getVelocity(i, j)
         )
     );
 
@@ -246,6 +246,7 @@ function simulate(stepSize) {
                 total_force,
                 viscousForce(i, j)
             )
+
             // update v <- v + stepSize*total_force/m
             let new_vel = vec3.add(
                 getVelocity(i, j),
