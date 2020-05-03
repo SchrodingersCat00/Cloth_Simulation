@@ -259,7 +259,11 @@ function simulate(stepSize) {
                 )
             );
             setVelocity(i, j, new_vel);
+        }
+    }
 
+    for(let i = 0; i < meshResolution; i++){
+        for(let j = 0; j < meshResolution; j++){
             // update x <- x + stepSize*v
             let new_pos = vec3.add(
                 getPosition(i, j),
@@ -272,5 +276,4 @@ function simulate(stepSize) {
             setPosition(i, j, new_pos);
         }
     }
-
 }
