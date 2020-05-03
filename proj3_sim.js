@@ -229,7 +229,7 @@ function simulate(stepSize) {
             // add gravity
             vec3.add(
                 total_force,
-                vec3.create([0, -mass * 9.8, 0])
+                vec3.create([10, -mass * 9.8, 0])
             );
 
             // add damping
